@@ -1,0 +1,192 @@
+{
+  "type": "page",
+  "aside": [
+    {
+      "type": "input-tree",
+      "label": "树组件",
+      "name": "tree",
+      "options": [
+        {
+          "label": "首页",
+          "value": "A",
+          "children": [
+            {
+              "label": "成绩",
+              "value": "D"
+            }
+          ]
+        },
+        {
+          "label": "考试",
+          "value": "B"
+        }
+      ],
+      "id": "u:6258f8db9014",
+      "multiple": false,
+      "enableNodePath": false,
+      "hideRoot": true,
+      "showIcon": true,
+      "initiallyOpen": true,
+      "onEvent": {},
+      "clearable": false
+    }
+  ],
+  "body": [
+    {
+      "type": "table-view",
+      "trs": [
+        {
+          "background": "#F7F7F7",
+          "tds": [
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "地区",
+                "id": "u:efee35fb133f"
+              },
+              "id": "u:21a2bf238213"
+            },
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "城市",
+                "id": "u:e3e49b3b6d44"
+              },
+              "id": "u:2c762397ccf0"
+            },
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "销量",
+                "id": "u:864a2b5f0559"
+              },
+              "id": "u:ecd304ef6608"
+            }
+          ],
+          "id": "u:073c3e2db98b"
+        },
+        {
+          "tds": [
+            {
+              "rowspan": 2,
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "华北",
+                "id": "u:59a0f15d9825"
+              },
+              "id": "u:3e9933475524"
+            },
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "北京",
+                "id": "u:4e1f22e5aa5b"
+              },
+              "id": "u:74f262bdf05f"
+            },
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "${beijing}",
+                "id": "u:a0a5abbf30f3"
+              },
+              "id": "u:4490687c81ea"
+            }
+          ],
+          "id": "u:6cb454d2220e"
+        },
+        {
+          "tds": [
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "天津",
+                "id": "u:b9c974d60b64"
+              },
+              "id": "u:b3bae8d4dd31"
+            },
+            {
+              "body": {
+                "type": "tpl",
+                "wrapperComponent": "",
+                "tpl": "${tianjing}",
+                "id": "u:51ef0b7bd68f"
+              },
+              "id": "u:a1a73d0bea73"
+            }
+          ],
+          "id": "u:627ff43250a7"
+        }
+      ],
+      "id": "u:396d33000b02"
+    },
+    {
+      "type": "crud",
+      "syncLocation": false,
+      "api": {
+        "method": "get",
+        "url": "http://127.0.0.1:8080/GetData"
+      },
+      "columns": [
+        {
+          "name": "id",
+          "label": "ID",
+          "type": "text",
+          "id": "u:9c0dc2da8dca"
+        },
+        {
+          "name": "engine",
+          "label": "渲染引擎",
+          "type": "text",
+          "id": "u:17403505a2fb"
+        }
+      ],
+      "bulkActions": [],
+      "itemActions": [],
+      "headerToolbar": [
+        {
+          "label": "新增",
+          "type": "button",
+          "actionType": "dialog",
+          "level": "primary",
+          "editorSetting": {
+            "behavior": "create"
+          },
+          "dialog": {
+            "title": "新增",
+            "body": {
+              "type": "form",
+              "api": {
+                "method": "post",
+                "url": "http://127.0.0.1:8080/GetData"
+              },
+              "body": [
+                {
+                  "type": "input-text",
+                  "name": "id",
+                  "label": "ID"
+                },
+                {
+                  "type": "input-text",
+                  "name": "engine",
+                  "label": "渲染引擎"
+                }
+              ]
+            }
+          },
+          "id": "u:a529094beb5f"
+        },
+        "bulkActions"
+      ],
+      "id": "u:c7c2ec0ee382"
+    }
+  ],
+  "id": "u:41c8f147efce"
+}
