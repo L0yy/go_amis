@@ -13,7 +13,7 @@ type RespendJson struct {
 
 func HandleGetConfig(c *fiber.Ctx) error {
 	resp := RespendJson{
-		Status: 0,
+		Status: 0,   大厦西侧
 		Msg:    "susc ok",
 		Data: []struct {
 			Id   int    `json:"id"`
